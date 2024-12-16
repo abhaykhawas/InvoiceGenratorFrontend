@@ -1,0 +1,85 @@
+@import url('../../Pages/Styles/variables.css');
+
+.dashboard-navbar-container{
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex; 
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 10px 15px;
+    background-color: var(--primary-actice-color);
+    color: white;
+    z-index: 99;
+
+}
+
+.navbar-logo-container h2{
+    letter-spacing: 5px;
+}
+
+.navbar-main-container ul{
+    display: flex;
+    width: 120%;
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+}
+
+.navbar-main-container ul li a{
+    color:  white;
+    text-decoration: white;
+    padding: 20px;
+}
+
+.navbar-main-container ul li a:hover{
+    background-color: var(--primary-color);
+}
+
+.navbar-profile-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-profile-pic{
+    border-radius: 50%;
+    margin-right: 8px;
+}
+
+.nav-down-arrow:hover{
+    cursor: pointer;
+}
+
+.down-arrow-nav-container:hover .hover-effect-down-arrow{
+    visibility: visible;
+}
+
+.hover-effect-down-arrow{
+    visibility: hidden;
+    position: fixed;
+    right: 0px;
+    top: 40px;
+}
+
+.hover-effect-down-arrow div {
+    margin-top: 20px;
+    background-color: var(--primary-actice-color);
+    padding: 10px;
+
+}
+
+.hover-effect-down-arrow div ul li{
+    list-style: none;
+    cursor: pointer;
+    padding: 5px;
+    margin: 5px;
+    background-color: var(--primary-color);
+    border-radius: 5px;
+}
+
+.hover-effect-down-arrow div ul li:hover{
+    background-color: var(--secondary-color);
+    color: black;
+}

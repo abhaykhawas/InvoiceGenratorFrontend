@@ -1,0 +1,173 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap");
+
+.generate-invoice-container{
+    display: flex;
+    position: fixed;
+    top: 60px;
+    left: 0;
+    width: 100%;
+}
+
+.part-one-generate-invoice-container{
+    width: 15%;
+}
+
+.part-one-generate-invoice-container li{
+    list-style: none;
+    cursor: pointer;
+    margin: 5px 0;
+    padding: 10px 5px;
+    border-radius: 5px;
+}
+
+.part-one-generate-invoice-container li:hover{
+  background: var(--primary-actice-color);
+  color: white;
+}
+
+.active-mode-invoice{
+    background-color: var(--primary-color);
+    color: white;
+}
+
+
+.part-two-generate-invoice-container{
+    width: 35%;
+    display: flex;
+    justify-content: center;
+    overflow-y: scroll;
+    -ms-overflow-style: none;  /* For Internet Explorer 10+ */
+    scrollbar-width: none;  /* For Firefox */
+
+}
+
+.part-two-generate-invoice-container::-webkit-scrollbar {
+    display: none;  /* For Chrome, Safari, and Opera */
+}
+
+.part-two-generate-invoice-container input[type="text"], textarea{
+    width: 100%;
+    padding: 12px;
+    border: none;
+    background: #f8f8f8;
+    font-size: 1rem;
+    margin-top: 8px;
+}
+
+.bin-generate-inv{
+    cursor: pointer;
+}
+
+.part-two-generate-invoice-container button, .part-two-generate-invoice-container input[type="submit"]{
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 15px;
+    width: 100%;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
+
+
+.part-two-generate-invoice-container button:hover, .part-two-generate-invoice-container input[type="submit"]:hover {
+  background: var(--primary-actice-color);
+}
+
+.part-two-generate-invoice-container, .part-one-generate-invoice-container, .product-table-container{
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    padding: 10px;
+    height: 90vh;
+}
+
+.part-two-generate-invoice-container label {
+    display: block;
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: -6px;
+    margin-top: 5px;
+}
+
+.part-three-generate-invoice-container{
+    width: 50%;
+}
+
+.product-table-container{
+    /* width: 50%; */
+    height: 50%;
+    /* overflow: hidden; */
+    overflow-y: scroll;
+    padding: 0;
+    /* border: 1px solid; */
+}
+
+.items-list-foot{
+    width: 100%;
+    border: none;
+    border-collapse: collapse;
+    table-layout: fixed;
+    text-align: center;
+}
+
+.product-table-container table{
+    width: 100%;
+    border: none;
+    border-collapse: collapse;
+    table-layout: fixed;
+
+}
+.item-lists-head{
+    width: 100%;
+    border: none;
+    border-collapse: collapse;
+    table-layout: fixed;
+    /* margin: 10px; */
+}
+.item-lists-head thead{
+    background: var(--primary-color);
+    color: white;
+    position: sticky;
+    /* height: 100px; */
+}
+
+.item-lists-head thead th{
+    padding: 5px ;
+}
+
+.product-table-container table tbody{
+    text-align: center;
+
+    width: 100%;
+
+}
+
+.product-table-container table tbody tr:nth-child(even) {
+    background-color: rgba(0, 0, 0, 0.3);
+    color: white;
+}
+
+.product-table-container table tbody tr:nth-child(odd) {
+    background-color: white;
+}
+
+/* .product-table-container table thead{
+    position: sticky;
+} */
+
+.grand-total-container{
+    background-color: var(--primary-color) !important;
+    color: white;
+    /* position: fixed; */
+    /* top: 0; */
+}
+
+.grand-total-container td{
+    padding: 10px;
+}
+
+.current-url-generate-container h2{
+    text-align: center;
+}
+
