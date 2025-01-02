@@ -11,12 +11,25 @@ function Dashboard() {
     const [qty, setQty] = useState('')
     const [price, setPrice] = useState('')
     const [grandTotal, setGrandTotal] = useState(0)
+    const [invoices, setInvoices] = useState([])
     useEffect(() => {
         try{
+            console.log("Check0")
             const fetchData = async () => {
-                let response = await axios.get('http://localhost:4000/api/v1/check-login', {withCredentials: true})
-                console.log(response.status)
-                if (response.status != 200){
+                try{
+                    let response = await axios.get('http://localhost:4000/api/v1/check-login', {withCredentials: true})
+                    console.log(response.status)
+                    if (response.status != 200){
+                        console.log("CHECK1")
+                        window.location.href = '/login'
+                    }
+                    else{
+                        let invoices_arr = await axios.get('http://localhost:4000/api/v1/get-all-invoice-id', {withCredentials: true})
+                        setInvoices(invoices_arr.data.Invoices)
+                    }
+                }
+                catch(error){
+                    console.log("CHECK3")
                     window.location.href = '/login'
                 }
             }
@@ -24,6 +37,7 @@ function Dashboard() {
             
         }
         catch(error) {
+            console.log("CHECK2")
             window.location.href = '/login'
         }
         
@@ -35,6 +49,12 @@ function Dashboard() {
         setItem("")
         setQty("")
         setPrice("")
+    }
+
+    async function getInvoice(invoiceId){
+        const invoiceURI = await axios.post('http://localhost:4000/api/v1/get-pdf-invoice', {invoiceId}, {withCredentials: true})
+        console.log(invoiceURI.data.invoiceURI)
+        window.open(invoiceURI.data.invoiceURI, '_blank');
     }
     return (
         <div className='dashboardContainer'>
@@ -119,6 +139,16 @@ function Dashboard() {
                     </table>
                     <div className="current-url-generate-container">
                         <h2>Invoice URL</h2>
+                        <ul>
+                            <li># Invoice ID</li>
+                            {
+                                invoices.map((e,i) => (
+                                    <li>
+                                        {i} <span onClick={() => getInvoice(e)}>{e}</span>
+                                    </li>
+                                ))
+                            }
+                        </ul>
                     </div>
                 </div>
                 

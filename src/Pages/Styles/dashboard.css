@@ -171,3 +171,33 @@
     text-align: center;
 }
 
+
+.current-url-generate-container{
+
+    height: 250px;
+    overflow-y: scroll;
+
+}
+.current-url-generate-container ul{
+    list-style: none;
+
+    height: 100%;
+
+}
+
+.current-url-generate-container ul li {
+    padding: 8px;
+    margin: 10px;
+}
+
+.current-url-generate-container span{
+    cursor: pointer;
+    padding: 4px;
+    background-color: rgba(128, 128, 128, 0.2);
+    border-radius: 5px;
+}
+
+.current-url-generate-container li {
+    background-color: white;
+    border-radius: 5px;
+}
