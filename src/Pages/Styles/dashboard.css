@@ -8,6 +8,11 @@
     width: 100%;
 }
 
+.sideNav-link{
+    text-decoration: none;
+    color: white;
+}
+
 .part-one-generate-invoice-container{
     width: 15%;
 }
